@@ -39,7 +39,6 @@ const Anti = () => {
             </div>
             <div>
                 <form className="flex flex-col" onSubmit={submitNumber}>
-                    
                     <input className="mb-2 border-b-2" id="num" type="number" step="any" min="1" max="10" required
                            style={{
                                textAlign: 'center',
