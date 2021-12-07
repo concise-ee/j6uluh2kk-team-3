@@ -7,8 +7,7 @@ import Kurmo from './Kurmo';
 import Margus from './Margus';
 import Rene from './Rene';
 
-const comps = [<Margus />];
-//const comps = [<Margus />, <Anti />, <Allan />, <Rene />, <Kurmo />, <Kaur />];
+const comps = [<Margus />, <Anti />, <Allan />, <Rene />, <Kurmo />, <Kaur />];
 
 const randIdx = Math.floor(Math.random() * comps.length);
 
