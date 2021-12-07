@@ -38,3 +38,6 @@ a {
 .mrgnbtm {
   margin-top: 20px;
 }
+
+@keyframes blinker { to { opacity: 0; } }
+
