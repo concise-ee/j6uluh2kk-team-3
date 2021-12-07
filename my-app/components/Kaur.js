@@ -151,7 +151,7 @@ const CSS_COLOR_NAMES = [
     "YellowGreen",
   ];
 
-const Hakk = () => {
+const Kaur = () => {
     const [color, setColor] = useState(CSS_COLOR_NAMES[Math.floor(Math.random() * CSS_COLOR_NAMES.length)]);
 
     useEffect(() => {
@@ -171,4 +171,4 @@ const Hakk = () => {
     )
 }
 
-export default Hakk;
+export default Kaur;

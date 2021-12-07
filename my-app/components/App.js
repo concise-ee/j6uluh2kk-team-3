@@ -3,7 +3,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Header} from './Header'
 import {Christmas} from './Christmas'
 import {getChristmas} from '../services/ChristmasService'
-import Hakk from './Kauripuu';
+import Hakk from './Kaur';
+import Margus from './Margus';
+import Anti from './Anti';
+import Allan from './Allan';
+import Rene from './Rene';
+import Kurmo from './Kurmo';
+import Kaur from './Kaur';
 
 class App extends Component {
 
@@ -21,7 +27,12 @@ class App extends Component {
 
     return (
       <>
-      <Hakk />
+       <Margus />
+       <Anti />
+       <Allan />
+       <Rene />
+       <Kurmo />
+       <Kaur />
       </>
     )
   }
