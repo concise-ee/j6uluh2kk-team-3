@@ -4,7 +4,7 @@ const Kaur = () => {
     return (
         <div style={wrapperStyle}>
             <div style={largeTreeWrapper}>
-                <Tree treeSize={100} treeOffset={70} />
+                <Tree treeSize={70} treeOffset={40} />
                 <Concise />
             </div>
             {Array.from({ length: 1500 }, (el, idx) => <Tree key={idx} />)}
@@ -23,7 +23,7 @@ const Tree = ({ treeSize = 16, treeOffset = 10, treeSpacing = 5.5 }) => {
     }, []);
 
     return (
-        <div style={{ position: 'relative', width: (treeSize * 2) + treeSpacing, height: treeSize * 3 }}>
+        <div style={{ position: 'relative', width: (treeSize * 2) + treeSpacing, height: treeSize * 2.5 }}>
             {Array.from({ length: 3 }).map((el, idx) => {
                 return (
                     <div key={idx} style={{
@@ -55,7 +55,8 @@ const Concise = () => {
         <p style={{
             color: '#ff0',
             fontSize: 60,
-            textShadow: '0 0 2px #10161e'
+            textShadow: '0 0 2px #10161e',
+            margin: 0
         }}>{letters}</p>
     )
 }
@@ -79,7 +80,17 @@ const treeStyle = {
     userSelect: 'none'
 };
 
-const largeTreeWrapper = { position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: 1 }
+const largeTreeWrapper = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    zIndex: 1,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'column',
+}
 
 const CSS_COLOR_NAMES = [
     "AliceBlue",
