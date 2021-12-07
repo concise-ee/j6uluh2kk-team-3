@@ -43,7 +43,7 @@ const App = () => {
         padding: '1rem',
         display: 'flex',
         justifyContent: 'space-around',
-        alignItems: 'center',
+        alignItems: 'flex-end',
         pointerEvents: 'none',
       }}>
         <button type="button" style={{ ...btnStyles, }} onClick={setPrev}>
