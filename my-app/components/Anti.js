@@ -7,13 +7,13 @@ const Anti = () => {
     const submitNumber = async (event) => {
         let num = event.target.num.value;
         let randIdx = event.target.num.value;
-        while (randIdx === event.target.num.value) {
+        while (randIdx - num === 0) {
             randIdx = Math.floor(Math.random() * 10) + 1;
         }
         
         event.preventDefault();
         
-        setHaba('WRONG :( You guessed ' + num + ' but right answer was ' + randIdx);
+        setHaba('WRONG!! It\'s not ' + num + ' but ' + randIdx+ '. Transfer money and try again!');
     };
     
     return (
@@ -27,7 +27,7 @@ const Anti = () => {
                 padding: 25,
                 color: 'blue',
                 animation: 'blinker 0.1s cubic-bezier(.5, 0, 1, 1) infinite alternate',
-                fontSize: 'xxx-large'
+                fontSize: 'xx-large'
             }}><strong>WIN 1000€ IN CASH NOW!!</strong></div>
             <div style={{
                 padding: 10
@@ -35,7 +35,7 @@ const Anti = () => {
             </div>
             <div style={{
                 padding: 10
-            }}>Guess random number from 1-10 to win:
+            }}><strong>Guess random number from 1-10 to win:</strong>
             </div>
             <div>
                 <form className="flex flex-col" onSubmit={submitNumber}>
@@ -56,8 +56,7 @@ const Anti = () => {
                 textAlign: 'center',
                 padding: 25,
                 color: 'red',
-                animation: 'blinker 0.1s cubic-bezier(.5, 0, 1, 1) infinite alternate',
-                fontSize: 'xxx-large'
+                fontSize: 'medium'
             }}>
                 {haba}
             </div>

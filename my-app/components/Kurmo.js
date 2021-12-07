@@ -14,7 +14,7 @@ const Kurmo = () => {
          <div class="santa-hat" style={{
            backgroundImage: "url(" + "https://i.ibb.co/pJ9ZbrW/hat.png" + ")",
            animation: 'MoveUpDown 3s linear infinite',
-              maxWidth: '500px',
+              maxWidth: '400px',
               width: '100%',
               height: '100px',
               backgroundRepeat: 'no-repeat',
@@ -23,7 +23,7 @@ const Kurmo = () => {
           }}></div>
          <div class="santa-claus" style={{
            backgroundImage: "url(" + "https://i.ibb.co/vLD8Gkw/santa.png" + ")",
-           maxWidth: '500px',
+           maxWidth: '400px',
            width: '100%',
            height: '500px',
            backgroundRepeat: 'no-repeat',
