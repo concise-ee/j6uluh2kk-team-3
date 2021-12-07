@@ -30,8 +30,6 @@ const App = () => {
   }
   const setLoop = () => setIsLoop((p) => !p);
 
-  console.log(`currentIndex`, currentIndex);
-
   return (
     <div style={{ width: '100vw', height: '100vh', overflow: 'hidden' }}>
       {comps[currentIndex]}

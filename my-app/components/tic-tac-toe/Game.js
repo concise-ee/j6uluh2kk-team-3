@@ -72,7 +72,7 @@ const Game = () => {
             'Go to move #' + move :
             'Go to game start';
         return (
-            <li key={move}>
+            <li key={move} style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                 <button onClick={() => jumpTo(move)}>{desc}</button>
             </li>
         );
@@ -93,9 +93,9 @@ const Game = () => {
                     onClick={i => handleClick(i)}
                 />
             </div>
-            <div className="game-info">
+            <div className="game-info" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}>
                 <div>{status}</div>
-                <ol>{moves}</ol>
+                <ol style={{ margin: 0, padding: 0 }}>{moves}</ol>
             </div>
         </div>
     );
@@ -103,7 +103,12 @@ const Game = () => {
 const styles = {
     body: {
         fontSize: "14px",
-        margin: "20px"
+        padding: "20px",
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'column',
+        height: '90vh'
     }
 };
 
