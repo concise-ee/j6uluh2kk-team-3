@@ -4,7 +4,7 @@ const Kaur = () => {
     return (
         <div style={wrapperStyle}>
             <div style={largeTreeWrapper}>
-                <Tree treeSize={70} treeOffset={40} />
+{/*                 <Tree treeSize={70} treeOffset={40} /> */}
                 <Concise />
             </div>
             {Array.from({ length: 1500 }, (el, idx) => <Tree key={idx} />)}
