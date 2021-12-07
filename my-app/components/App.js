@@ -1,41 +1,29 @@
-import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Header} from './Header'
-import {Christmas} from './Christmas'
-import {getChristmas} from '../services/ChristmasService'
-import Hakk from './Kaur';
-import Margus from './Margus';
-import Anti from './Anti';
+import React, { useState, useEffect } from 'react';
 import Allan from './Allan';
-import Rene from './Rene';
-import Kurmo from './Kurmo';
+import Anti from './Anti';
 import Kaur from './Kaur';
+import Kurmo from './Kurmo';
+import Margus from './Margus';
+import Rene from './Rene';
 
-class App extends Component {
+const comps = [<Margus />, <Anti />, <Allan />, <Rene />, <Kurmo />, <Kaur />];
 
-  state = {
-    christmas: {}
-  }
+const randIdx = Math.floor(Math.random() * comps.length);
 
-  async componentDidMount() {
-    let christmas = await getChristmas()
-    console.log(christmas);
-    this.setState({christmas: christmas})
-  }
+const App = () => {
+  const [currentIndex, setCurrentIndex] = useState(randIdx);
 
-  render() {
+  useEffect(() => {
+    const interval = setInterval(() => setCurrentIndex(p => p > comps.length - 1 ? 0 : p += 1), 10000);
+    return () => clearInterval(interval);
+  }, []);
 
-    return (
-      <>
-       <Margus />
-       <Anti />
-       <Allan />
-       <Rene />
-       <Kurmo />
-       <Kaur />
-      </>
-    )
-  }
+  return (
+    <>
+      {comps[currentIndex]}
+    </>
+  );
 }
 
 export default App;
