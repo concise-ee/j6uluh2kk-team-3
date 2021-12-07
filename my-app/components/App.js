@@ -62,7 +62,6 @@ const App = () => {
 
 const btnStyles = {
   pointerEvents: 'all',
-  border: 'none',
   background: 'none',
   backgroundColor: '#FFF',
   padding: '0.5rem 1rem',
