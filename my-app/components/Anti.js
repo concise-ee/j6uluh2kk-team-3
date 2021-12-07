@@ -7,13 +7,13 @@ const Anti = () => {
     const submitNumber = async (event) => {
         let num = event.target.num.value;
         let randIdx = event.target.num.value;
-        while (randIdx === event.target.num.value) {
+        while (randIdx - num === 0) {
             randIdx = Math.floor(Math.random() * 10) + 1;
         }
         
         event.preventDefault();
         
-        setHaba('WRONG!! It\'s not ' + num + ' but ' + randIdx+ ' :(');
+        setHaba('WRONG!! It\'s not ' + num + ' but ' + randIdx+ '. Transfer money and try again!');
     };
     
     return (
@@ -56,7 +56,6 @@ const Anti = () => {
                 textAlign: 'center',
                 padding: 25,
                 color: 'red',
-                animation: 'blinker 0.1s cubic-bezier(.5, 0, 1, 1) infinite alternate',
                 fontSize: 'medium'
             }}>
                 {haba}
