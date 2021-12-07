@@ -5,7 +5,7 @@ import Game from "./tic-tac-toe/Game";
 
 const Margus = () => {
     return (
-        <div>
+        <div style={{ backgroundColor: 'lightyellow', height: '100vh'}}>
             <Game />
         </div>
     )
