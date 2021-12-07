@@ -15,8 +15,7 @@ const App = () => {
   const [currentIndex, setCurrentIndex] = useState(randIdx);
 
   useEffect(() => {
-    const interval = setInterval(() => setCurrentIndex(p => p > comps.length - 1 ? 0 : p += 1), 10000);
-    return () => clearInterval(interval);
+
   }, []);
 
   return (
