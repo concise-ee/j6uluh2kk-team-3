@@ -103,7 +103,6 @@ const Game = () => {
 const styles = {
     body: {
         fontSize: "14px",
-        margin: "20px"
     }
 };
 
