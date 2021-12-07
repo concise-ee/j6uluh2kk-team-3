@@ -12,7 +12,7 @@ const Kaur = () => {
     )
 }
 
-const Tree = ({ treeSize = 16, treeOffset = 10, treeSpacing = 5 }) => {
+const Tree = ({ treeSize = 16, treeOffset = 10, treeSpacing = 5.5 }) => {
     const [color, setColor] = useState(CSS_COLOR_NAMES[Math.floor(Math.random() * CSS_COLOR_NAMES.length)]);
 
     const getRandColor = () => CSS_COLOR_NAMES[Math.floor(Math.random() * CSS_COLOR_NAMES.length)];
