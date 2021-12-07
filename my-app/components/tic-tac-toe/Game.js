@@ -73,7 +73,7 @@ const Game = () => {
             'Go to game start';
         return (
             <li key={move} style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-                <button onClick={() => jumpTo(move)}>{desc}</button>
+                <button onClick={() => jumpTo(move)} style={{ width: '100%', margin: '0.25rem', border: 'none', background: '#DADADA', color: '#000' }}>{desc}</button>
             </li>
         );
     });
@@ -87,7 +87,7 @@ const Game = () => {
 
     return (
         <div style={styles.body} className="game">
-            <div className="game-board">
+            <div className="game-board" style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '30vh'}}>
                 <Board
                     squares={current.squares}
                     onClick={i => handleClick(i)}
@@ -104,11 +104,6 @@ const styles = {
     body: {
         fontSize: "14px",
         padding: "20px",
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'column',
-        height: '90vh'
     }
 };
 
