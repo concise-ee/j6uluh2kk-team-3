@@ -11,7 +11,7 @@ const comps = [<Margus />, <Anti />, <Allan />, <Rene />, <Kurmo />, <Kaur />];
 
 const App = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isLoop, setIsLoop] = useState(false);
+  const [isLoop, setIsLoop] = useState(true);
 
   useEffect(() => {
     if (isLoop) {
@@ -62,7 +62,6 @@ const App = () => {
 
 const btnStyles = {
   pointerEvents: 'all',
-  border: 'none',
   background: 'none',
   backgroundColor: '#FFF',
   padding: '0.5rem 1rem',
