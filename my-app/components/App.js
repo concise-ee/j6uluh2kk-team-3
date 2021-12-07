@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Header} from './Header'
 import {Christmas} from './Christmas'
 import {getChristmas} from '../services/ChristmasService'
+import Hakk from './Kauripuu';
 
 class App extends Component {
 
@@ -19,13 +20,10 @@ class App extends Component {
   render() {
 
     return (
-      <div className="App">
-        <Header></Header>
-        <div className="row mrgnbtm">
-          <Christmas christmas={this.state.christmas}></Christmas>
-        </div>
-      </div>
-    );
+      <>
+      <Hakk />
+      </>
+    )
   }
 }
 
