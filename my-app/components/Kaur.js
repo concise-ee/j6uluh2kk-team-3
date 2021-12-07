@@ -1,5 +1,54 @@
 import React, { useState, useEffect } from 'react';
 
+const Kaur = () => {
+    return (
+        <div style={{
+            width: '100%',
+            height: '100%',
+            backgroundColor: 'red',
+            display: 'flex',
+            flexWrap: 'wrap',
+            alignContent: 'start',
+            overflow: 'hidden'
+        }}>
+            {Array.from({ length: 1500 }, (el, idx) => <Tree key={idx} />)}
+        </div>
+    )
+}
+
+const treeSize = 16;
+const treeOffset = 10;
+const treeSpacing = 5;
+
+const Tree = () => {
+    const [color, setColor] = useState(CSS_COLOR_NAMES[Math.floor(Math.random() * CSS_COLOR_NAMES.length)]);
+
+    const getRandColor = () => CSS_COLOR_NAMES[Math.floor(Math.random() * CSS_COLOR_NAMES.length)];
+
+    useEffect(() => {
+        const interval = setInterval(() => setColor(getRandColor()), 2000);
+        return () => clearInterval(interval);
+    });
+
+    return (
+        <div style={{ position: 'relative', width: (treeSize * 2) + treeSpacing, height: treeSize * 3 }}>
+            {Array.from({ length: 3 }).map((el, idx) => {
+                return (
+                    <div key={idx} style={{
+                        width: 0,
+                        height: 0,
+                        position: 'absolute',
+                        top: (treeSize - treeOffset * idx),
+                        borderLeft: `${treeSize}px solid transparent`,
+                        borderRight: `${treeSize}px solid transparent`,
+                        borderBottom: `${treeSize}px solid ${color === 'Red' ? getRandColor() : color}`,
+                    }} /> 
+                )
+            })}
+        </div>
+    )
+};
+
 const CSS_COLOR_NAMES = [
     "AliceBlue",
     "AntiqueWhite",
@@ -149,26 +198,6 @@ const CSS_COLOR_NAMES = [
     "WhiteSmoke",
     "Yellow",
     "YellowGreen",
-  ];
-
-const Kaur = () => {
-    const [color, setColor] = useState(CSS_COLOR_NAMES[Math.floor(Math.random() * CSS_COLOR_NAMES.length)]);
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setColor(CSS_COLOR_NAMES[Math.floor(Math.random() * CSS_COLOR_NAMES.length)]);
-        }, 1000);
-        return () => clearInterval(interval);
-    })
-    return (
-        <div style={{
-            width: '100vw',
-            height: '100vh',
-            backgroundColor: color
-        }}>
-            
-        </div>
-    )
-}
+];
 
 export default Kaur;
